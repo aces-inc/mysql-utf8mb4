@@ -1,7 +1,13 @@
-.PHONY: build push
+.PHONY: build-5.7 push-5.7 build-8.0 push-8.0
 
-build: Dockerfile
-	docker build -t acesdevelop/mysql-utf8mb4:8.0.15 .
+build-5.7: ./docker/5.7/Dockerfile
+	docker build -t acesdev/mysql-utf8mb4:5.7 -f ./docker/5.7/Dockerfile .
 
-push:
-	docker push acesdevelop/mysql-utf8mb4:8.0.15
+push-5.7:
+	docker push acesdev/mysql-utf8mb4:5.7
+
+build-8.0.15: ./docker/8.0.15/Dockerfile
+	docker build -t acesdev/mysql-utf8mb4:8.0.15 -f ./docker/8.0.15/Dockerfile .
+
+push-8.0.15:
+	docker push acesdev/mysql-utf8mb4:8.0.15
