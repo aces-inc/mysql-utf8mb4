@@ -11,3 +11,9 @@ build-8.0.15: ./docker/8.0.15/Dockerfile
 
 push-8.0.15:
 	docker push acesdev/mysql-utf8mb4:8.0.15
+
+build-8.0.20: ./docker/8.0.20/Dockerfile
+	docker build -t acesdev/mysql-utf8mb4:8.0.20 -f ./docker/8.0.20/Dockerfile .
+
+push-8.0.20:
+	docker push acesdev/mysql-utf8mb4:8.0.20
